@@ -16,7 +16,7 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
 import { toast, Toaster } from 'react-hot-toast';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState('');
   const [secret, setSecret] = useState(null);
   const isAuth = Boolean(user) && Boolean(secret);
   // OTP Verifiaction
@@ -24,7 +24,7 @@ function App() {
   const [number, setNumber] = useState('');
   const [loading, setLoading] = useState(false);
   const [showOTP, setShowOTP] = useState(false);
-  const [verified, setVerified] = useState(null);
+  const [verified, setVerified] = useState('');
 
   function onCaptchVerify() {
     if (!window.recaptchaVerifier) {
